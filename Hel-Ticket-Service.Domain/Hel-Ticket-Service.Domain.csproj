@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Hel_Ticket_Service.Domain</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.22.0"/>
+    <PackageReference Include="System.DirectoryServices.Protocols" Version="6.0.1"/>
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1"/>
+    <PackageReference Include="Serilog.Enrichers.AspnetcoreHttpcontext" Version="1.1.0"/>
+    <PackageReference Include="MongoDB.Bson" Version="2.18.0"/>
+    <PackageReference Include="MongoDB.Driver" Version="2.18.0"/>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2"/>
+    <PackageReference Include="LanguageExt.Core" Version="4.4.0"/>
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.8"/>
+  </ItemGroup>
+</Project>
