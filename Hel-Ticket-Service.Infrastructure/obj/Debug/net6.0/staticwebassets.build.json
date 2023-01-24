@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "c4z4zwa02Jfz4InHtq/8SnRQ4ShwvjXCd2UrCMCO5l8=",
+  "Hash": "TIBmPI9gRqr+64zekQSlnp89z8bTbyY1c3pMczKJbSc=",
   "Source": "Hel-Ticket-Service.Infrastructure",
   "BasePath": "_content/Hel-Ticket-Service.Infrastructure",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\lilian\\Desktop\\Efasa\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj",
+      "Identity": "C:\\Users\\Decagon\\Desktop\\hel_Ticket_Service\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj",
       "Version": 2,
       "Source": "Hel-Ticket-Service.Domain",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

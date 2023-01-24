@@ -2,6 +2,7 @@ using Hel_Ticket_Service.Domain;
 using Microsoft.Extensions.Caching.Distributed;
 using MongoDB.Driver;
 using Serilog;
+using Hel_Ticket_Service.Domain.AppTicket.Contract;
 using System.Text.Json;
 
 namespace Hel_Ticket_Service.Infrastructure;
@@ -73,6 +74,53 @@ public class TicketRepository: ITicketRepository
         await _cacheProvider.SetToCache(reference,data); // Set cache
         return data;
     }
+
+    public async Task<TicketsSummaryDto> GetTicketsSummary()
+    {
+        Log.Information("Getting ticket summary");
+        var data = await _cacheProvider.GetFromCache<TicketsSummaryDto>("ticket_summary"); // Get data from cache
+        if (data is not null) return data;
+
+        var openTickets = await _ticket.CountDocumentsAsync(ticket => ticket.Status == "OPEN");
+        var closedTickets = await _ticket.CountDocumentsAsync(ticket => ticket.Status == "CLOSED");
+        var activeTickets = await _ticket.CountDocumentsAsync(ticket => ticket.Status == "ACTIVE");
+        var escalatedTickets = await _ticket.CountDocumentsAsync(ticket => ticket.IsEscalted == true);
+
+
+        var totalSummary = new TicketsSummaryDto
+        {
+            TotalOpenTickets = (int)openTickets,
+            TotalClosedTickets = (int)closedTickets,
+            TotalActiveTickets = (int)activeTickets,
+            TotalEscalatedTickets = (int)escalatedTickets
+        };
+
+        await _cacheProvider.SetToCache("ticket_summary", totalSummary); // Set cache
+        return totalSummary;
+    }
+
+
+    public async Task<List<Ticket>> GetEscalatedTicketsByUser(string reference)
+    {
+        Log.Information("Getting escalated tickets for user {0}", reference);
+        var data = await _cacheProvider.GetFromCache<List<Ticket>>("escalated_tickets_" + reference); // Get data from cache
+        if (data is not null) return data;
+        data = await _ticket.Find(ticket => ticket.IsEscalted == true && ticket.Reference == reference).ToListAsync();
+        await _cacheProvider.SetToCache("escalated_tickets_" + reference, data); // Set cache
+        return data;
+    }
+
+    public async Task<List<Ticket>> GetEscalatedTicketsToAdmin(string reference)
+{
+    Log.Information("Getting escalated tickets assigned to user {0}", reference);
+    var data = await _cacheProvider.GetFromCache<List<Ticket>>("escalated_tickets_assigned_" + reference); // Get data from cache
+    if (data is not null) return data;
+    data = await _ticket.Find(ticket => ticket.IsEscalted == true && ticket.AssignedTo == reference).ToListAsync();
+    await _cacheProvider.SetToCache("escalated_tickets_assigned_" + reference, data); // Set cache
+    return data;
+}
+
+
     // public async Task<List<Ticket>> GetTicketList(string page)
     // {
     //     Log.Information("Getting data by page {0}", page);

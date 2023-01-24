@@ -1,3 +1,5 @@
+using Hel_Ticket_Service.Domain.AppTicket.Contract;
+
 namespace Hel_Ticket_Service.Domain;
 
 public interface ITicketRepository{
@@ -11,7 +13,9 @@ public interface ITicketRepository{
     Task<string> UpdateTicket(string reference, UpdateTicketDto ticket);
     Task<string> DeleteTicket(string reference);
     Task<Ticket> GetTicketByReference(string reference);
-    
+    Task<TicketsSummaryDto> GetTicketsSummary();
+    Task<List<Ticket>> GetEscalatedTicketsByUser(string reference);
+    Task<List<Ticket>> GetEscalatedTicketsToAdmin(string name);
     #endregion
 }
 

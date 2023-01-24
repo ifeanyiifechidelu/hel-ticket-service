@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using System.DirectoryServices;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;  
+using System.Collections.Generic;
+using Hel_Ticket_Service.Domain.AppTicket.Contract;
 using Hel_Ticket_Service.Domain;
 
 namespace Hel_Ticket_Service.Api;
@@ -45,14 +46,37 @@ namespace Hel_Ticket_Service.Api;
                 return Ok( await _ticketRepository.GetTicketByReference(reference));
            
         }
+
+
+        [HttpGet("{get-ticket-summary}")]
+        public async Task<ActionResult<TicketsSummaryDto>> GetTicketsSummary()
+        {
+            var result = await _ticketRepository.GetTicketsSummary();
+
+            return Ok(result);
+        }
+
+        [HttpGet("{get-escalated-ticket-by-user}")]
+        public async Task<ActionResult<Ticket>> GetEscalatedTicketsByUser(string user)
+        {
+            var result = await _ticketRepository.GetEscalatedTicketsByUser(user);
+
+            return Ok(result);
+        }
+
+        [HttpGet("{get-escalated-ticket-by-user}")]
+        public async Task<ActionResult<Ticket>> GetEscalatedTicketsToAdmin(string admin)
+        {
+            var result = await _ticketRepository.GetEscalatedTicketsByUser(admin);
+
+            return Ok(result);
+        }
+
         // [HttpGet("list/{page}")]
         // public async Task<ActionResult<List<Ticket>>> GetTicketList(string page)
         // {
 
         //         return Ok( await _ticketRepository.GetTicketList(page));
-           
-          
         // }
-     
     }
 

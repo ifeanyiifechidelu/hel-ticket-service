@@ -13,11 +13,12 @@
             "program": "${workspaceFolder}/Hel-Ticket-Service.Api/bin/Debug/net6.0/Hel-Ticket-Service.Api.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Hel-Ticket-Service.Api",
-            "stopAtEntry": false,
+            "stopAtEntry": false,        
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
                 "action": "openExternally",
-                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "uriFormat": "%s/swagger/index.html"
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
@@ -27,9 +28,10 @@
             }
         },
         {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach"
+          "name": ".NET Core Attach",
+          "type": "chrome",
+          "request": "attach",
+          "url": "https://localhost:7006/swagger/index.html"
         }
     ]
 }

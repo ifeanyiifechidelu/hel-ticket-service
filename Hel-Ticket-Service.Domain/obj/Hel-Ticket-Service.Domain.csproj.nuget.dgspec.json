@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lilian\\Desktop\\Efasa\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj": {}
+    "C:\\Users\\Decagon\\Desktop\\hel_Ticket_Service\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lilian\\Desktop\\Efasa\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj": {
+    "C:\\Users\\Decagon\\Desktop\\hel_Ticket_Service\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lilian\\Desktop\\Efasa\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Decagon\\Desktop\\hel_Ticket_Service\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj",
         "projectName": "Hel-Ticket-Service.Domain",
-        "projectPath": "C:\\Users\\lilian\\Desktop\\Efasa\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj",
-        "packagesPath": "C:\\Users\\lilian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lilian\\Desktop\\Efasa\\hel-ticket-service\\Hel-Ticket-Service.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Decagon\\Desktop\\hel_Ticket_Service\\hel-ticket-service\\Hel-Ticket-Service.Domain\\Hel-Ticket-Service.Domain.csproj",
+        "packagesPath": "C:\\Users\\Decagon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Decagon\\Desktop\\hel_Ticket_Service\\hel-ticket-service\\Hel-Ticket-Service.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lilian\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Decagon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -97,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
